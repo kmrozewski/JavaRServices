@@ -1,0 +1,14 @@
+version: '2'
+services:
+  r-serve:
+    container_name: r-serve
+    image: r-serve:latest
+    build: ./r-serve
+    networks:
+      - rserve-network
+    dns: 8.8.8.8
+    ports:
+      - "6311:6311"
+networks:
+  rserve-network:
+    driver: bridge
