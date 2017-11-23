@@ -1,19 +1,18 @@
 package com.javar.configuration;
 
+import javax.validation.constraints.NotNull;
+
 import io.dropwizard.Configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RApplicationConfiguration extends Configuration {
 
-    @JsonProperty
-    private String name;
+    @NotNull
+    @JsonProperty("rserve")
+    private RServeConfiguration rServeConfiguration;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public RServeConfiguration getrServeConfiguration() {
+        return rServeConfiguration;
     }
 }
