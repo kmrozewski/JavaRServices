@@ -1,5 +1,7 @@
 package com.javar.services;
 
+import java.util.function.Function;
+
 import javax.inject.Inject;
 
 import org.rosuda.REngine.REXPMismatchException;
@@ -30,9 +32,23 @@ public class SampleService {
     public Integer getSum(int a, int b) {
         try {
             return connection.eval(String.format("%s + %s", a, b)).asInteger();
-        } catch (RserveException e) {
+        } catch (RserveException | REXPMismatchException e) {
             throw new RuntimeException(e);
-        } catch (REXPMismatchException e) {
+        } finally {
+            connection.close();
+        }
+    }
+
+    public Integer getSum2(int a, int b) {
+        String script = String.format("%s + %s", a, b);
+
+        return execute(rScript -> connection.eval(rScript).asInteger(), script);
+    }
+
+    private <T> T execute(CheckedLambda<T> evalFunction, String script) {
+        try {
+            return evalFunction.apply(script);
+        } catch (RserveException | REXPMismatchException e) {
             throw new RuntimeException(e);
         } finally {
             connection.close();

@@ -1,5 +1,7 @@
 package com.javar.resources;
 
+import static javax.ws.rs.core.Response.Status.OK;
+
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,7 +25,7 @@ public class SampleResource {
     public Response get(@QueryParam("name") String name) {
         String data = "Hello " + name + "!";
 
-        return Response.status(200).entity(data).build();
+        return Response.status(OK).entity(data).build();
     }
 
     @GET
@@ -31,6 +33,6 @@ public class SampleResource {
     public Response getSum(@QueryParam("a") int a, @QueryParam("b") int b) {
         sampleService.initialize();
 
-        return Response.status(200).entity("Result" + sampleService.getSum(a, b).toString()).build();
+        return Response.status(OK).entity("Result " + sampleService.getSum2(a, b).toString()).build();
     }
 }
