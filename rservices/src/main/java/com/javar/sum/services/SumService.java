@@ -3,8 +3,12 @@ package com.javar.sum.services;
 import javax.inject.Inject;
 
 import com.javar.rserve.execute.RServe;
+import com.javar.rserve.lambda.CheckedLambda;
+import com.javar.util.ScriptReader;
 
 public class SumService {
+
+    private static final String R_SCRIPT_PATH = "rScripts/sum.R";
 
     private RServe RServe;
 
@@ -13,9 +17,16 @@ public class SumService {
         this.RServe = RServe;
     }
 
-    public Integer calculateSum(int x, int y) {
-        String script = String.format("%s + %s", x, y);
+    public Integer calculateSum(double x, double y) {
+        return RServe.execute(evaluate(x, y), ScriptReader.read(this.getClass(), R_SCRIPT_PATH));
+    }
 
-        return RServe.execute(((conn, s) -> conn.eval(s).asInteger()), script);
+    private CheckedLambda<Integer> evaluate(double x, double y) {
+        return (connection, script) -> {
+            connection.assign("x", new double[] { x });
+            connection.assign("y", new double[] { y });
+
+            return connection.eval(script).asInteger();
+        };
     }
 }

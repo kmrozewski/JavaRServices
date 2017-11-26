@@ -3,6 +3,7 @@ package com.javar.rserve.execute;
 import javax.inject.Inject;
 
 import org.rosuda.REngine.REXPMismatchException;
+import org.rosuda.REngine.REngineException;
 import org.rosuda.REngine.Rserve.RConnection;
 import org.rosuda.REngine.Rserve.RserveException;
 
@@ -35,6 +36,8 @@ public class RServe implements Execute {
 
             return evalFunction.apply(connection, rScript);
         } catch (RserveException | REXPMismatchException e) {
+            throw new RuntimeException("Error during script execution", e);
+        } catch (REngineException e) {
             throw new RuntimeException("Error during script execution", e);
         } finally {
             closeConnection();
