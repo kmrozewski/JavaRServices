@@ -24,6 +24,7 @@ public class RServe implements Execute {
     protected final void initializeConnection() {
         try {
             connection = new RConnection(configuration.getHost(), configuration.getPort());
+            //TODO: authentication
         } catch (RserveException e) {
             throw new RuntimeException("Failed to initialize RServe connection", e);
         }
