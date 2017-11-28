@@ -15,4 +15,4 @@ getPrediction <- function(sepalLength, sepalWidth, petalLength, petalWidth) {
     return(toJSON(response))
 }
 
-getPrediction(sepalLength, sepalWidth, petalLength, petalWidth)
+getPrediction(frm$sepalLength, frm$sepalWidth, frm$petalLength, frm$petalWidth)

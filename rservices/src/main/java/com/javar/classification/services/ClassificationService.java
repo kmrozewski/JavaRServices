@@ -1,12 +1,18 @@
 package com.javar.classification.services;
 
+import static com.javar.util.REXPParser.getREXP;
 import static com.javar.util.ScriptReader.read;
 
 import java.io.IOException;
 
 import javax.inject.Inject;
 
+import org.rosuda.REngine.REXP;
+import org.rosuda.REngine.REXPMismatchException;
+import org.rosuda.REngine.RList;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableMap;
 import com.javar.classification.models.IrisDataFrame;
 import com.javar.classification.models.RandomForestResponse;
 import com.javar.rserve.execute.RServe;
@@ -15,6 +21,7 @@ import com.javar.rserve.lambda.CheckedLambda;
 public class ClassificationService {
 
     private static final String R_SCRIPT_PATH = "rScripts/random_forest_model.R";
+    private static final String INPUT_DATA_NAME = "frm";
     private static final String COL_1 = "sepalLength";
     private static final String COL_2 = "sepalWidth";
     private static final String COL_3 = "petalLength";
@@ -42,12 +49,24 @@ public class ClassificationService {
 
     private CheckedLambda<String> evaluate(IrisDataFrame dataFrame) {
         return (connection, script) -> {
-            connection.assign(COL_1, new double[] { dataFrame.getSepalLength() });
-            connection.assign(COL_2, new double[] { dataFrame.getSepalWidth() });
-            connection.assign(COL_3, new String[] { dataFrame.getPetalLength() });
-            connection.assign(COL_4, new String[] { dataFrame.getPetalWidth() });
+            //TODO: handle null values
+            connection.assign(INPUT_DATA_NAME, createDataFrame(dataFrame));
 
             return connection.eval(script).asString();
         };
+    }
+
+    private REXP createDataFrame(IrisDataFrame dataFrame) throws REXPMismatchException {
+        ImmutableMap<String, Object> map = ImmutableMap.<String, Object>builder()
+            .put(COL_1, getREXP(dataFrame::getSepalLength))
+            .put(COL_2, getREXP(dataFrame::getSepalWidth))
+            .put(COL_3, getREXP(dataFrame::getPetalLength))
+            .put(COL_4, getREXP(dataFrame::getPetalWidth))
+            .build();
+
+        RList list = new RList();
+        list.putAll(map);
+
+        return REXP.createDataFrame(list);
     }
 }
