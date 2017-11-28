@@ -14,11 +14,18 @@ public class RServeConfiguration {
     @JsonProperty
     private int port;
 
+    @JsonProperty("credentials")
+    private RServeCredentialsConfiguration credentialsConfiguration;
+
     public String getHost() {
         return host;
     }
 
     public int getPort() {
         return port;
+    }
+
+    public RServeCredentialsConfiguration getCredentialsConfiguration() {
+        return credentialsConfiguration;
     }
 }

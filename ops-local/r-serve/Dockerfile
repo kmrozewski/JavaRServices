@@ -7,6 +7,7 @@ RUN R -e "install.packages('randomForest')"
 
 COPY ./config/rserve.conf /rserve.conf
 COPY ./config/rserve.R /rserve.R
+COPY ./config/passwordfile /passwordfile
 COPY ./randomForest_model.rds /model.rds
 COPY entrypoint.sh /
 
