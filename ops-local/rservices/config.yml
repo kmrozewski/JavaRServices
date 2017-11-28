@@ -1,3 +1,6 @@
 rserve:
-  host: r-serve
+  host: localhost
   port: 6311
+  credentials:
+    login: rserve-login
+    password: rserve-password
