@@ -9,7 +9,7 @@ public class RandomForestResponse {
 
     @JsonProperty
     @JsonInclude(NON_NULL)
-    private double probability;
+    private Double probability;
 
     @JsonProperty
     @JsonInclude(NON_NULL)
@@ -24,11 +24,11 @@ public class RandomForestResponse {
     @JsonProperty
     private String timestamp;
 
-    public double getProbability() {
+    public Double getProbability() {
         return probability;
     }
 
-    public void setProbability(double probability) {
+    public void setProbability(Double probability) {
         this.probability = probability;
     }
 

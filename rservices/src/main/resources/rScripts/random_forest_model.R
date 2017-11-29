@@ -6,11 +6,15 @@ getPrediction <- function(sepalLength, sepalWidth, petalLength, petalWidth) {
 
     fit.predict <- predict(fit, newdata = input.data, type = "prob")
 
-    response <- list(probability = as.numeric(fit.predict[1]),
+    response <- list(probability = as.null(),
     label = as.character(colnames(fit.predict)[1]),
     inputData = input.data,
-    message = "Success",
+    message = "Asdd",
     timestamp = as.character(Sys.time()))
+
+    if (!is.na(fit.predict[1])) {
+        response$probability <- as.numeric(fit.predict[1])
+    }
 
     return(toJSON(response))
 }
