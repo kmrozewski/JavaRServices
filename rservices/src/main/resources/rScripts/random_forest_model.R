@@ -9,7 +9,7 @@ getPrediction <- function(sepalLength, sepalWidth, petalLength, petalWidth) {
     response <- list(probability = as.null(),
     label = as.character(colnames(fit.predict)[1]),
     inputData = input.data,
-    message = "Asdd",
+    message = ifelse(is.na(fit.predict[1]), "Fail - NA value", "Success"),
     timestamp = as.character(Sys.time()))
 
     if (!is.na(fit.predict[1])) {

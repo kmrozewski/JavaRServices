@@ -49,7 +49,6 @@ public class ClassificationService {
 
     private CheckedLambda<String> evaluate(IrisDataFrame dataFrame) {
         return (connection, script) -> {
-            //TODO: handle null values
             connection.assign(INPUT_DATA_NAME, createDataFrame(dataFrame));
 
             return connection.eval(script).asString();
