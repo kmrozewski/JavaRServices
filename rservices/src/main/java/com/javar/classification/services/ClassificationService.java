@@ -4,6 +4,7 @@ import static com.javar.util.REXPParser.getREXP;
 import static com.javar.util.ScriptReader.read;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -20,7 +21,7 @@ import com.javar.rserve.lambda.CheckedLambda;
 
 public class ClassificationService {
 
-    private static final String R_SCRIPT_PATH = "rScripts/random_forest_model.R";
+    private static final String R_SCRIPT_PATH = "rScripts/random_forest_predict_single.R";
     private static final String INPUT_DATA_NAME = "frm";
     private static final String COL_1 = "sepalLength";
     private static final String COL_2 = "sepalWidth";
@@ -45,6 +46,12 @@ public class ClassificationService {
         } catch (IOException e) {
             throw new RuntimeException("Failed to map response to RandomForestResponse.class", e);
         }
+    }
+
+    public RandomForestResponse predictAll(List<IrisDataFrame> list) {
+        String rScript = read(this.getClass(), R_SCRIPT_PATH);
+
+        return null;
     }
 
     private CheckedLambda<String> evaluate(IrisDataFrame dataFrame) {
