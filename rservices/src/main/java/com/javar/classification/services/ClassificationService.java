@@ -6,7 +6,6 @@ import static com.javar.util.REXPParser.getREXP;
 import static com.javar.util.ScriptReader.read;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -18,7 +17,6 @@ import org.rosuda.REngine.RList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
-import com.javar.classification.models.InputData;
 import com.javar.classification.models.IrisDataFrame;
 import com.javar.classification.models.RandomForestResponse;
 import com.javar.rserve.execute.RServe;
@@ -58,15 +56,11 @@ public class ClassificationService {
     }
 
     public RandomForestResponse predictAll(List<IrisDataFrame> list) throws REXPMismatchException {
-        try {
-            String rScript = read(this.getClass(), R_SCRIPT_SINGLE_PATH);
+        String rScript = read(this.getClass(), R_SCRIPT_SINGLE_PATH);
 
-            RList rlist = new RList();
-            rlist.addAll(list);
-            REXP frm = REXP.createDataFrame(rlist);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to map response to RandomForestResponse.class", e);
-        }
+        RList rlist = new RList();
+        rlist.addAll(list);
+        REXP frm = REXP.createDataFrame(rlist);
 
         return null;
     }
