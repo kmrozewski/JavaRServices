@@ -52,7 +52,7 @@ curl -H "Content-Type: application/json" \
  ```
  
  Should return `JSON` with following data structure
- ```json
+ ```javascript
 {
   "inputData": { //fields and arrays with input data
     "sepalLength": [ 2.32 ],
