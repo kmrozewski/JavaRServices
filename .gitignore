@@ -1,3 +1,6 @@
+# app build with onejar
+ops-local/rservices/rservices.jar
+
 # Compiled class file
 *.class
 
