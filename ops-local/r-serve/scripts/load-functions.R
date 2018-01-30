@@ -1,18 +1,18 @@
 # Helper function to return model prediction results
-getPredictResponse <- function(fit.predict) {
-	list(probability = as.numeric(fit.predict[, 1]),
-			 label = as.character(colnames(fit.predict))[1],
-			 message = ifelse(is.na(fit.predict[, 1]), "Fail - NA value", "Success"),
-			 timestamp = as.character(rep(Sys.time(), length(fit.predict[, 1]))))
+getPredictResponse <- function(fit.prediction) {
+	list(probability = as.numeric(fit.prediction[, 1]),
+			 label = as.character(colnames(fit.prediction))[1],
+			 message = ifelse(is.na(fit.prediction[, 1]), "Fail - NA value", "Success"),
+			 timestamp = as.character(rep(Sys.time(), length(fit.prediction[, 1]))))
 }
 
 
 # Helper function to merge input data and model prediction results
-getResponse <- function(input.data, fit.predict) {
+getResponse <- function(input.data, fit.prediction) {
 	inputDataResults <- toJSON(input.data, collapse = "", asIs = TRUE) %>% 
 		paste0('"inputData": ', .)
 	
-	predictResults <- toJSON(getPredictResponse(fit.predict), collapse = "") %>% 
+	predictResults <- toJSON(getPredictResponse(fit.prediction), collapse = "") %>%
 		str_replace("^\\[ ", "") %>% 
 		str_replace(" \\]$", "") %>%
 		paste0('"predictResults": [', ., "]")
@@ -43,9 +43,9 @@ getAllPredictions <- function(input.data) {
 	input.data$petalLength <- factor(input.data$petalLength, levels = df.levels$petalLength)
 	input.data$petalWidth <- factor(input.data$petalWidth, levels = df.levels$petalWidth)
 	
-	fit.predict <- predict(fit, newdata = input.data, type = "prob")
+	fit.prediction <- prediction(fit, newdata = input.data, type = "prob")
 	
-	getResponse(input.data, fit.predict)
+	getResponse(input.data, fit.prediction)
 }
 
 # Similar to the function getAllPredictions. Takes only one value as input
@@ -55,7 +55,7 @@ getPrediction <- function(sepalLength, sepalWidth, petalLength, petalWidth) {
 													 petalLength = factor(petalLength, levels = df.levels$petalLength), 
 													 petalWidth = factor(petalWidth, levels = df.levels$petalWidth))
 	
-	fit.predict <- predict(fit, newdata = input.data, type = "prob")
+	fit.prediction <- prediction(fit, newdata = input.data, type = "prob")
 	
-	getResponse(input.data, fit.predict)
+	getResponse(input.data, fit.prediction)
 }

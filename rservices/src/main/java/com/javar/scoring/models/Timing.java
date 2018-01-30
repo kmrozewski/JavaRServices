@@ -1,4 +1,4 @@
-package com.javar.scoring.model1.models;
+package com.javar.scoring.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

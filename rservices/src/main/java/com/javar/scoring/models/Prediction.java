@@ -1,8 +1,8 @@
-package com.javar.scoring.model1.models;
+package com.javar.scoring.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Predict {
+public class Prediction {
 
     @JsonProperty
     private Double probability;

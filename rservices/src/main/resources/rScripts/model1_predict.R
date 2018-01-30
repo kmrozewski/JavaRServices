@@ -1,0 +1,1 @@
+getPredictionFromModel1(input_data)

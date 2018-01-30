@@ -32,7 +32,7 @@ curl -X GET http://localhost:8080/sample/sum\?x\=2\&y\=3
 Should return `5`.
 
 ### Random Forest model classification for single row of data
-Sample `POST` request to return run `predict()` function in R for a RandomForest model in R.<br>
+Sample `POST` request to return run `prediction()` function in R for a RandomForest model in R.<br>
 ```bash
 curl -H "Content-Type: application/json" \
     -X POST \
