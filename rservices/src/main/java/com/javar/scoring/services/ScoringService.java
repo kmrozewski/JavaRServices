@@ -2,10 +2,6 @@ package com.javar.scoring.services;
 
 import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
 
-import static com.javar.util.ScriptReader.read;
-
-import java.io.IOException;
-
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 
@@ -13,21 +9,16 @@ import org.rosuda.REngine.REXP;
 import org.rosuda.REngine.REXPMismatchException;
 import org.rosuda.REngine.RList;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.javar.rserve.execute.RServe;
 import com.javar.rserve.lambda.CheckedLambda;
-import com.javar.scoring.model1.Model1DataFrame;
 import com.javar.scoring.models.ModelDataFrame;
-import com.javar.scoring.models.ScoringResponse;
 
 public abstract class ScoringService<T extends ModelDataFrame> {
 
     private static final String INPUT_DATA_NAME = "input_data";
-    private final ObjectMapper mapper = new ObjectMapper();
     private RServe rServe;
 
-    protected abstract String getRScriptPath();
     protected abstract ImmutableMap<String, Object> getModelDataFrameMappings(T modelDataFrame);
 
     @Inject
@@ -35,17 +26,11 @@ public abstract class ScoringService<T extends ModelDataFrame> {
         this.rServe = rServe;
     }
 
-    protected ScoringResponse<T> run(T modelDataFrame) {
+    protected String run(T modelDataFrame, String rScript) {
         try {
-            String rScript = read(this.getClass(), getRScriptPath());
-            REXP rDataFrame = this.createDataFrame(getModelDataFrameMappings(modelDataFrame));
-            String result = rServe.execute(evaluateScript(rDataFrame), rScript);
+            REXP rDataFrame = createDataFrame(getModelDataFrameMappings(modelDataFrame));
 
-            ScoringResponse<Model1DataFrame> response = new ScoringResponse<>();
-
-            return mapper.readValue(result, response.getClass());
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to map response from R to ScoringResponse", e);
+            return rServe.execute(evaluateScript(rDataFrame), rScript);
         } catch (REXPMismatchException e) {
             throw new WebApplicationException("Wrong data format", BAD_REQUEST);
         }

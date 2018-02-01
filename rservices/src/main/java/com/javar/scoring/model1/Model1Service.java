@@ -1,24 +1,26 @@
 package com.javar.scoring.model1;
 
 import static com.javar.util.REXPParser.getREXP;
+import static com.javar.util.ScriptReader.read;
+
+import java.io.IOException;
 
 import javax.inject.Inject;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.javar.rserve.execute.RServe;
-import com.javar.scoring.models.ScoringResponse;
 import com.javar.scoring.services.ScoringService;
 
 public class Model1Service extends ScoringService<Model1DataFrame> {
 
+    private static final String R_SCRIPT_PATH = "rScripts/model1_predict.R";
+    private final String rScript = read(this.getClass(), R_SCRIPT_PATH);
+    private final ObjectMapper mapper = new ObjectMapper();
+
     @Inject
     public Model1Service(RServe rServe) {
         super(rServe);
-    }
-
-    @Override
-    protected String getRScriptPath() {
-        return "rScripts/model1_predict.R";
     }
 
     @Override
@@ -43,7 +45,13 @@ public class Model1Service extends ScoringService<Model1DataFrame> {
             .build();
     }
 
-    public ScoringResponse predict(Model1DataFrame modelDataFrame) {
-        return run(modelDataFrame);
+    public Model1Response predict(Model1DataFrame modelDataFrame) {
+        try {
+            String results = run(modelDataFrame, rScript);
+
+            return mapper.readValue(results, Model1Response.class).setId(modelDataFrame.getId());
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to map R script response to Model1Response", e);
+        }
     }
 }

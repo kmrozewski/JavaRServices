@@ -1,21 +1,26 @@
 package com.javar.scoring.models;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ScoringResponse<T extends ModelDataFrame> {
+public abstract class ScoringResponse {
 
     @JsonProperty
-    private T inputData;
+    private long id;
 
     @JsonProperty
+    @NotNull
     private Prediction[] prediction;
 
-    public T getInputData() {
-        return inputData;
+    public long getId() {
+        return id;
     }
 
-    public void setInputData(T inputData) {
-        this.inputData = inputData;
+    public ScoringResponse setId(long id) {
+        this.id = id;
+
+        return this;
     }
 
     public Prediction[] getPrediction() {
