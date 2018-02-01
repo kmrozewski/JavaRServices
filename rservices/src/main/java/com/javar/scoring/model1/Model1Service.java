@@ -48,8 +48,10 @@ public class Model1Service extends ScoringService<Model1DataFrame> {
     public Model1Response predict(Model1DataFrame modelDataFrame) {
         try {
             String results = run(modelDataFrame, rScript);
+            Model1Response response = mapper.readValue(results, Model1Response.class).setId(modelDataFrame.getId());
+            response.getInputData().setId(modelDataFrame.getId());
 
-            return mapper.readValue(results, Model1Response.class).setId(modelDataFrame.getId());
+            return response;
         } catch (IOException e) {
             throw new RuntimeException("Unable to map R script response to Model1Response", e);
         }

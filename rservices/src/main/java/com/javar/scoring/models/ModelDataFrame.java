@@ -1,7 +1,5 @@
 package com.javar.scoring.models;
 
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -9,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public abstract class ModelDataFrame {
 
     @JsonProperty("ID")
-    @NotNull
     private long id;
 
     public long getId() {
