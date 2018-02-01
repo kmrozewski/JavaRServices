@@ -28,7 +28,7 @@ public abstract class ScoringService<T extends ModelDataFrame> {
 
     protected String run(T modelDataFrame, String rScript) {
         try {
-            REXP rDataFrame = createDataFrame(getModelDataFrameMappings(modelDataFrame));
+            REXP rDataFrame = createDataFrame(modelDataFrame);
 
             return rServe.execute(evaluateScript(rDataFrame), rScript);
         } catch (REXPMismatchException e) {
@@ -44,9 +44,9 @@ public abstract class ScoringService<T extends ModelDataFrame> {
         });
     }
 
-    private REXP createDataFrame(ImmutableMap<String, Object> modelDataFrameMappings) throws REXPMismatchException {
+    private REXP createDataFrame(T modelDataFrame) throws REXPMismatchException {
         RList list = new RList();
-        list.putAll(modelDataFrameMappings);
+        list.putAll(getModelDataFrameMappings(modelDataFrame));
 
         return REXP.createDataFrame(list);
     }
