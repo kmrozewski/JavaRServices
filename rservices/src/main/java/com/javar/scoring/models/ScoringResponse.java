@@ -2,38 +2,27 @@ package com.javar.scoring.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ScoringResponse {
+public class ScoringResponse<T extends ModelDataFrame> {
 
     @JsonProperty
-    private ModelDataFrame inputData;
+    private T inputData;
 
     @JsonProperty
-    private Prediction prediction;
+    private Prediction[] prediction;
 
-    @JsonProperty
-    private Timing[] timings;
-
-    public ModelDataFrame getInputData() {
+    public T getInputData() {
         return inputData;
     }
 
-    public void setInputData(ModelDataFrame inputData) {
+    public void setInputData(T inputData) {
         this.inputData = inputData;
     }
 
-    public Prediction getPrediction() {
+    public Prediction[] getPrediction() {
         return prediction;
     }
 
-    public void setPrediction(Prediction prediction) {
+    public void setPrediction(Prediction[] prediction) {
         this.prediction = prediction;
-    }
-
-    public Timing[] getTimings() {
-        return timings;
-    }
-
-    public void setTimings(Timing[] timings) {
-        this.timings = timings;
     }
 }

@@ -1,3 +1,6 @@
+
+
+
 # Helper function to return model prediction results
 getPredictResponse <- function(fit.prediction) {
 	list(probability = as.numeric(fit.prediction[, 1]),
@@ -58,4 +61,25 @@ getPrediction <- function(sepalLength, sepalWidth, petalLength, petalWidth) {
 	fit.prediction <- prediction(fit, newdata = input.data, type = "prob")
 	
 	getResponse(input.data, fit.prediction)
+}
+
+getModelPrediction <- function(input.data, fitted.model, input.factor.levels) {
+	# Select only the first value
+	frm <- input.data[1, ]
+	
+	# Change character columns to factors
+	frm[sapply(frm, is.character)] <- lapply(names(frm[sapply(frm, is.character)]), 
+																					 function(x, factor.levels) factor(frm[[x]], levels = factor.levels[[x]]),
+																					 factor.levels = input.factor.levels)
+	
+	# Run predict
+	model.pred <- predict(object = fitted.model, newdata = frm, type = "prob")
+	
+	# Prepare output
+	model.response <- lapply(seq_along(model.pred), 
+													 function(index, keys, values) list(label = keys[index], probability = values[index]),
+													 keys = colnames(model.pred),
+													 values = as.numeric(model.pred))
+	
+	toJSON(list(inputData = frm, prediction = model.response))
 }

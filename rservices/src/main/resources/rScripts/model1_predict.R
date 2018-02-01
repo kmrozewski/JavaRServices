@@ -1,1 +1,1 @@
-getPredictionFromModel1(input_data)
+getModelPrediction(input_data, model1.fitted, model1.factorlevels)

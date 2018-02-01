@@ -5,16 +5,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Prediction {
 
     @JsonProperty
-    private Double probability;
+    private double probability;
 
     @JsonProperty
     private String label;
 
-    public Double getProbability() {
+    public double getProbability() {
         return probability;
     }
 
-    public void setProbability(Double probability) {
+    public void setProbability(double probability) {
         this.probability = probability;
     }
 

@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.javar.rserve.execute.RServe;
 import com.javar.rserve.lambda.CheckedLambda;
+import com.javar.scoring.model1.Model1DataFrame;
 import com.javar.scoring.models.ModelDataFrame;
 import com.javar.scoring.models.ScoringResponse;
 
@@ -34,16 +35,15 @@ public abstract class ScoringService<T extends ModelDataFrame> {
         this.rServe = rServe;
     }
 
-    public ScoringService() {
-    }
-
-    protected ScoringResponse run(T modelDataFrame) {
+    protected ScoringResponse<T> run(T modelDataFrame) {
         try {
             String rScript = read(this.getClass(), getRScriptPath());
             REXP rDataFrame = this.createDataFrame(getModelDataFrameMappings(modelDataFrame));
             String result = rServe.execute(evaluateScript(rDataFrame), rScript);
 
-            return mapper.readValue(result, ScoringResponse.class);
+            ScoringResponse<Model1DataFrame> response = new ScoringResponse<>();
+
+            return mapper.readValue(result, response.getClass());
         } catch (IOException e) {
             throw new RuntimeException("Failed to map response from R to ScoringResponse", e);
         } catch (REXPMismatchException e) {

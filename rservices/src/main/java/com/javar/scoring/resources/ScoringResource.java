@@ -29,8 +29,8 @@ public class ScoringResource {
 
     @POST
     @Path("/model1")
-    public Response getResultFromModel1(InputDataRequest inputDataRequest) {
-        Model1DataFrame modelDataFrame = (Model1DataFrame) inputDataRequest.getDataFrame();
+    public Response getResultFromModel1(InputDataRequest<Model1DataFrame> inputDataRequest) {
+        Model1DataFrame modelDataFrame = inputDataRequest.getDataFrame();
         ScoringResponse response = model1Service.predict(modelDataFrame);
 
         return Response.status(OK).entity(response).build();

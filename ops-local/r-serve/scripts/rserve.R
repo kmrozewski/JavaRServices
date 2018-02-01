@@ -12,9 +12,8 @@ host <- tolower(system("hostname -s", TRUE))
 cat("Starting Rserve on", host,"\n")
 
 ## This is jsut a friendly way to load package and report success/failure
-## You will definiteily need FastRWeb, others are optional
 .libPaths( c( .libPaths(), "/home/tjc29/R/x86_64-pc-linux-gnu-library/3.1/") )
-pkgs <- c("RJSONIO", "randomForest", "stringr")
+pkgs <- c("rjson", "randomForest", "stringr")
 
 cat("Loading packages...\n")
 for (pkg in pkgs) cat(pkg, ": ",require(pkg, quietly=FALSE, character.only=TRUE), "\n", sep='')
@@ -23,3 +22,12 @@ cat("Loading model and factor levels...")
 ret <- readRDS("/model.rds")
 fit <- ret$model # fitted random forest model for iris data
 df.levels <- ret$levels # levels 
+
+####################################################
+# Model 1
+####################################################
+cat("Loading model 1")
+model1.bundle <- readRDS("/model1-bundle.rds")
+model1.fitted <- model1.bundle$fitted.model
+model1.factorlevels <- model1.bundle$factor.levels
+####################################################
