@@ -27,7 +27,7 @@ public class RServe implements Execute {
         this.credentialsConfiguration = this.configuration.getCredentialsConfiguration();
     }
 
-    protected final void initializeConnection() throws RserveException {
+    private void initializeConnection() throws RserveException {
         connection = new RConnection(configuration.getHost(), configuration.getPort());
     }
 
@@ -50,7 +50,7 @@ public class RServe implements Execute {
         }
     }
 
-    protected final void closeConnection() {
+    private void closeConnection() {
         connection.close();
     }
 

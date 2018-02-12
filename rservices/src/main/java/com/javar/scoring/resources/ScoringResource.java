@@ -10,7 +10,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import com.javar.classification.models.InputData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.javar.scoring.model1.Model1DataFrame;
 import com.javar.scoring.model1.Model1Service;
 import com.javar.scoring.model2.Model2DataFrame;
@@ -23,6 +25,7 @@ import com.javar.scoring.models.ScoringResponse;
 @Consumes(APPLICATION_JSON)
 public class ScoringResource {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private Model1Service model1Service;
     private Model2Service model2Service;
 
@@ -35,6 +38,7 @@ public class ScoringResource {
     @POST
     @Path("/model1")
     public Response getResultFromModel1(InputDataRequest<Model1DataFrame> inputDataRequest) {
+        logger.info("Model1 request {}", inputDataRequest);
         Model1DataFrame modelDataFrame = inputDataRequest.getDataFrame();
         ScoringResponse response = model1Service.predict(modelDataFrame);
 
