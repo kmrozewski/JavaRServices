@@ -2,6 +2,8 @@ package com.javar.scoring.model1;
 
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.javar.scoring.models.ScoringResponse;
 
@@ -9,6 +11,7 @@ public class Model1Response extends ScoringResponse {
 
     @JsonProperty("inputData")
     @NotNull
+    @Getter
     private Model1DataFrame inputData;
 
     @Override
@@ -16,13 +19,5 @@ public class Model1Response extends ScoringResponse {
         super.setId(id);
 
         return this;
-    }
-
-    public Model1DataFrame getInputData() {
-        return inputData;
-    }
-
-    public void setInputData(Model1DataFrame inputData) {
-        this.inputData = inputData;
     }
 }

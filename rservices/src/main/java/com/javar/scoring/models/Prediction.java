@@ -1,7 +1,12 @@
 package com.javar.scoring.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Getter
+@Setter
 public class Prediction {
 
     @JsonProperty
@@ -9,20 +14,4 @@ public class Prediction {
 
     @JsonProperty
     private String label;
-
-    public double getProbability() {
-        return probability;
-    }
-
-    public void setProbability(double probability) {
-        this.probability = probability;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
 }

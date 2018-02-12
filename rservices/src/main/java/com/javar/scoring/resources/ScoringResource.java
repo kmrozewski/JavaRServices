@@ -38,7 +38,7 @@ public class ScoringResource {
     @POST
     @Path("/model1")
     public Response getResultFromModel1(InputDataRequest<Model1DataFrame> inputDataRequest) {
-        logger.info("Model1 request {}", inputDataRequest);
+        logger.info("Model1 request \n{}", inputDataRequest);
         Model1DataFrame modelDataFrame = inputDataRequest.getDataFrame();
         ScoringResponse response = model1Service.predict(modelDataFrame);
 
@@ -48,6 +48,7 @@ public class ScoringResource {
     @POST
     @Path("/model2")
     public Response getResultFromModel2(InputDataRequest<Model2DataFrame> inputDataRequest) {
+        logger.info("Model2 request \n{}", inputDataRequest);
         Model2DataFrame modelDataFrame = inputDataRequest.getDataFrame();
         ScoringResponse response = model2Service.predict(modelDataFrame);
 

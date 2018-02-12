@@ -32,8 +32,6 @@ public abstract class ScoringService<T extends ModelDataFrame> {
     protected String run(T modelDataFrame, String rScript) {
         try {
             REXP rDataFrame = createDataFrame(modelDataFrame);
-            logger.info("Created R DataFrame {}", rDataFrame);
-
             return rServe.execute(evaluateScript(rDataFrame), rScript);
         } catch (REXPMismatchException e) {
             throw new WebApplicationException("Wrong data format", BAD_REQUEST);

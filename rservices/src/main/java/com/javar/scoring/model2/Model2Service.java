@@ -49,6 +49,7 @@ public class Model2Service extends ScoringService<Model2DataFrame> {
     public Model2Response predict(Model2DataFrame modelDataFrame) {
         try {
             String results = run(modelDataFrame, rScript);
+            logger.info("Model2 response from R: \n{}", results);
             Model2Response response = mapper.readValue(results, Model2Response.class).setId(modelDataFrame.getId());
             response.getInputData().setId(modelDataFrame.getId());
 
