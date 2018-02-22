@@ -11,6 +11,7 @@ import org.rosuda.REngine.RList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.javar.rserve.execute.RServe;
 import com.javar.rserve.lambda.CheckedLambda;
@@ -20,6 +21,7 @@ public abstract class ScoringService<T extends ModelDataFrame> {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
     protected abstract ImmutableMap<String, Object> getModelDataFrameMappings(T modelDataFrame);
+    protected final ObjectMapper mapper = new ObjectMapper();
 
     private static final String INPUT_DATA_NAME = "input_data";
     private RServe rServe;

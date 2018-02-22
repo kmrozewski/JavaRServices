@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.javar.rserve.execute.RServe;
 import com.javar.scoring.services.ScoringService;
@@ -16,7 +15,6 @@ public class Model2Service extends ScoringService<Model2DataFrame> {
 
     private static final String R_SCRIPT_PATH = "rScripts/model2_predict.R";
     private final String rScript = read(this.getClass(), R_SCRIPT_PATH);
-    private final ObjectMapper mapper = new ObjectMapper();
 
     @Inject
     public Model2Service(RServe rServe) {
