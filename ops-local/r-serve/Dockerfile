@@ -15,6 +15,7 @@ COPY ./models/randomForest_model.rds /model.rds
 COPY ./models/model-1-rf-bundle-20180131.rds /model1-bundle.rds
 COPY ./models/model-2-rf-bundle-20180207.rds /model2-bundle.rds
 COPY ./models/model-4-rf-bundle-20180222.rds /model4-bundle.rds
+COPY ./models/model-5-rf-bundle-20180308.rds /model5-bundle.rds
 
 COPY entrypoint.sh /
 

@@ -44,3 +44,10 @@ cat("Loading model 4")
 model4.bundle <- readRDS("/model4-bundle.rds")
 model4.fitted <- model4.bundle$fitted.model
 model4.factorlevels <- model4.bundle$factor.levels
+####################################################
+# Model 5
+####################################################
+cat("Loading model 5")
+model5.bundle <- readRDS("/model5-bundle.rds")
+model5.fitted <- model5.bundle$fitted.model
+model5.factorlevels <- model5.bundle$factor.levels

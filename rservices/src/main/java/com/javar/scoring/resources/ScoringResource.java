@@ -19,6 +19,8 @@ import com.javar.scoring.model2.Model2DataFrame;
 import com.javar.scoring.model2.Model2Service;
 import com.javar.scoring.model4.Model4DataFrame;
 import com.javar.scoring.model4.Model4Service;
+import com.javar.scoring.model5.Model5DataFrame;
+import com.javar.scoring.model5.Model5Service;
 import com.javar.scoring.models.InputDataRequest;
 import com.javar.scoring.models.ScoringResponse;
 
@@ -31,12 +33,14 @@ public class ScoringResource {
     private Model1Service model1Service;
     private Model2Service model2Service;
     private Model4Service model4Service;
+    private Model5Service model5Service;
 
     @Inject
-    public ScoringResource(Model1Service model1Service, Model2Service model2Service, Model4Service model4Service) {
+    public ScoringResource(Model1Service model1Service, Model2Service model2Service, Model4Service model4Service, Model5Service model5Service) {
         this.model1Service = model1Service;
         this.model2Service = model2Service;
         this.model4Service = model4Service;
+        this.model5Service = model5Service;
     }
 
     @POST
@@ -65,6 +69,16 @@ public class ScoringResource {
         logger.info("Model4 request \n{}", inputDataRequest);
         Model4DataFrame modelDataFrame = inputDataRequest.getDataFrame();
         ScoringResponse response = model4Service.predict(modelDataFrame);
+
+        return Response.status(OK).entity(response).build();
+    }
+
+    @POST
+    @Path("/model5")
+    public Response getResultFromModel5(InputDataRequest<Model5DataFrame> inputDataRequest) {
+        logger.info("Model5 request \n{}", inputDataRequest);
+        Model5DataFrame modelDataFrame = inputDataRequest.getDataFrame();
+        ScoringResponse response = model5Service.predict(modelDataFrame);
 
         return Response.status(OK).entity(response).build();
     }
