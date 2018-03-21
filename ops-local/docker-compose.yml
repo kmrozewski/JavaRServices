@@ -24,8 +24,10 @@ services:
     container_name: rservices
     image: rservices:latest
     build: ./rservices
+    restart: always
     depends_on:
       - dockerize-wait-for-rserve
+      - r-serve
     links:
       - r-serve
       - dockerize-wait-for-rserve
