@@ -4,33 +4,21 @@ services:
     container_name: r-serve
     image: r-serve:latest
     build: ./r-serve
+    restart: always
     networks:
       - backend-network
     dns: 8.8.8.8
     ports:
       - "6311:6311"
-  dockerize-wait-for-rserve:
-    container_name: dockerize-wait-for-rserve
-    image: dockerize-wait-for-rserve:latest
-    build: ./dockerize
-    depends_on:
-      - r-serve
-    links:
-      - r-serve
-    command: dockerize -wait tcp://r-serve:6311 -timeout 30s
-    networks:
-      - backend-network
   rservices:
     container_name: rservices
     image: rservices:latest
     build: ./rservices
     restart: always
     depends_on:
-      - dockerize-wait-for-rserve
       - r-serve
     links:
       - r-serve
-      - dockerize-wait-for-rserve
     networks:
       - backend-network
     dns:
