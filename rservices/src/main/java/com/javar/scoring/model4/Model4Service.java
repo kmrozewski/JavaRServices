@@ -35,7 +35,7 @@ public class Model4Service extends ScoringService<Model4DataFrame> {
 
             return response;
         } catch (IOException e) {
-            throw new RuntimeException("Unable to map R script response to Model1Response", e);
+            throw new RuntimeException("Unable to map R script response to Model4Response", e);
         }
     }
 }

@@ -29,13 +29,13 @@ public class Model3Service extends ScoringService<Model3DataFrame> {
     public Model3Response predict(Model3DataFrame modelDataFrame) {
         try {
             String results = run(modelDataFrame, rScript);
-            logger.info("Model4 response from R: \n{}", results);
+            logger.info("Model3 response from R: \n{}", results);
             Model3Response response = mapper.readValue(results, Model3Response.class).setId(modelDataFrame.getId());
             response.getInputData().setId(modelDataFrame.getId());
 
             return response;
         } catch (IOException e) {
-            throw new RuntimeException("Unable to map R script response to Model1Response", e);
+            throw new RuntimeException("Unable to map R script response to Model3Response", e);
         }
     }
 }

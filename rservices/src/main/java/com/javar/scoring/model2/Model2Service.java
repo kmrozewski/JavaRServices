@@ -53,7 +53,7 @@ public class Model2Service extends ScoringService<Model2DataFrame> {
 
             return response;
         } catch (IOException e) {
-            throw new RuntimeException("Unable to map R script response to Model1Response", e);
+            throw new RuntimeException("Unable to map R script response to Model2Response", e);
         }
     }
 }
