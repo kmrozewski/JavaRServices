@@ -17,6 +17,7 @@ COPY ./models/model-2-rf-bundle-20180207.rds /model2-bundle.rds
 COPY ./models/model-3-rf-bundle-20180322.rds /model3-bundle.rds
 COPY ./models/model-4-rf-bundle-20180222.rds /model4-bundle.rds
 COPY ./models/model-5-rf-bundle-20180308.rds /model5-bundle.rds
+COPY ./models/model-6-rf-bundle-20180410.rds /model6-bundle.rds
 
 COPY entrypoint.sh /
 
