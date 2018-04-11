@@ -14,139 +14,139 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X001")
-    private int inputVariable001;
+    private double inputVariable001;
 
     @NotNull
     @JsonProperty("X002")
-    private int inputVariable002;
+    private double inputVariable002;
 
     @NotNull
     @JsonProperty("X003")
-    private int inputVariable003;
+    private double inputVariable003;
 
     @NotNull
     @JsonProperty("X004")
-    private int inputVariable004;
+    private double inputVariable004;
 
     @NotNull
     @JsonProperty("X005")
-    private int inputVariable005;
+    private double inputVariable005;
 
     @NotNull
     @JsonProperty("X006")
-    private int inputVariable006;
+    private double inputVariable006;
 
     @NotNull
     @JsonProperty("X007")
-    private int inputVariable007;
+    private double inputVariable007;
 
     @NotNull
     @JsonProperty("X008")
-    private int inputVariable008;
+    private double inputVariable008;
 
     @NotNull
     @JsonProperty("X009")
-    private int inputVariable009;
+    private double inputVariable009;
 
     @NotNull
     @JsonProperty("X010")
-    private int inputVariable010;
+    private double inputVariable010;
 
     @NotNull
     @JsonProperty("X011")
-    private int inputVariable011;
+    private double inputVariable011;
 
     @NotNull
     @JsonProperty("X012")
-    private int inputVariable012;
+    private double inputVariable012;
 
     @NotNull
     @JsonProperty("X013")
-    private int inputVariable013;
+    private double inputVariable013;
 
     @NotNull
     @JsonProperty("X014")
-    private int inputVariable014;
+    private double inputVariable014;
 
     @NotNull
     @JsonProperty("X015")
-    private int inputVariable015;
+    private double inputVariable015;
 
     @NotNull
     @JsonProperty("X016")
-    private int inputVariable016;
+    private double inputVariable016;
 
     @NotNull
     @JsonProperty("X017")
-    private int inputVariable017;
+    private double inputVariable017;
 
     @NotNull
     @JsonProperty("X018")
-    private int inputVariable018;
+    private double inputVariable018;
 
     @NotNull
     @JsonProperty("X019")
-    private int inputVariable019;
+    private double inputVariable019;
 
     @NotNull
     @JsonProperty("X020")
-    private int inputVariable020;
+    private double inputVariable020;
 
     @NotNull
     @JsonProperty("X021")
-    private int inputVariable021;
+    private double inputVariable021;
 
     @NotNull
     @JsonProperty("X022")
-    private int inputVariable022;
+    private double inputVariable022;
 
     @NotNull
     @JsonProperty("X023")
-    private int inputVariable023;
+    private double inputVariable023;
 
     @NotNull
     @JsonProperty("X024")
-    private int inputVariable024;
+    private double inputVariable024;
 
     @NotNull
     @JsonProperty("X025")
-    private int inputVariable025;
+    private double inputVariable025;
 
     @NotNull
     @JsonProperty("X026")
-    private int inputVariable026;
+    private double inputVariable026;
 
     @NotNull
     @JsonProperty("X027")
-    private int inputVariable027;
+    private double inputVariable027;
 
     @NotNull
     @JsonProperty("X028")
-    private int inputVariable028;
+    private double inputVariable028;
 
     @NotNull
     @JsonProperty("X029")
-    private int inputVariable029;
+    private double inputVariable029;
 
     @NotNull
     @JsonProperty("X030")
-    private int inputVariable030;
+    private double inputVariable030;
 
     @NotNull
     @JsonProperty("X031")
-    private int inputVariable031;
+    private double inputVariable031;
 
     @NotNull
     @JsonProperty("X032")
-    private int inputVariable032;
+    private double inputVariable032;
 
     @NotNull
     @JsonProperty("X033")
-    private int inputVariable033;
+    private double inputVariable033;
 
     @NotNull
     @JsonProperty("X034")
-    private int inputVariable034;
+    private double inputVariable034;
 
     @NotNull
     @JsonProperty("X035")
@@ -174,31 +174,31 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X041")
-    private int inputVariable041;
+    private double inputVariable041;
 
     @NotNull
     @JsonProperty("X042")
-    private int inputVariable042;
+    private double inputVariable042;
 
     @NotNull
     @JsonProperty("X043")
-    private int inputVariable043;
+    private double inputVariable043;
 
     @NotNull
     @JsonProperty("X044")
-    private int inputVariable044;
+    private double inputVariable044;
 
     @NotNull
     @JsonProperty("X045")
-    private int inputVariable045;
+    private double inputVariable045;
 
     @NotNull
     @JsonProperty("X046")
-    private int inputVariable046;
+    private double inputVariable046;
 
     @NotNull
     @JsonProperty("X047")
-    private int inputVariable047;
+    private double inputVariable047;
 
     @NotNull
     @JsonProperty("X048")
@@ -266,211 +266,211 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X064")
-    private int inputVariable064;
+    private double inputVariable064;
 
     @NotNull
     @JsonProperty("X065")
-    private int inputVariable065;
+    private double inputVariable065;
 
     @NotNull
     @JsonProperty("X066")
-    private int inputVariable066;
+    private double inputVariable066;
 
     @NotNull
     @JsonProperty("X067")
-    private int inputVariable067;
+    private double inputVariable067;
 
     @NotNull
     @JsonProperty("X068")
-    private int inputVariable068;
+    private double inputVariable068;
 
     @NotNull
     @JsonProperty("X069")
-    private int inputVariable069;
+    private double inputVariable069;
 
     @NotNull
     @JsonProperty("X070")
-    private int inputVariable070;
+    private double inputVariable070;
 
     @NotNull
     @JsonProperty("X071")
-    private int inputVariable071;
+    private double inputVariable071;
 
     @NotNull
     @JsonProperty("X072")
-    private int inputVariable072;
+    private double inputVariable072;
 
     @NotNull
     @JsonProperty("X073")
-    private int inputVariable073;
+    private double inputVariable073;
 
     @NotNull
     @JsonProperty("X074")
-    private int inputVariable074;
+    private double inputVariable074;
 
     @NotNull
     @JsonProperty("X075")
-    private int inputVariable075;
+    private double inputVariable075;
 
     @NotNull
     @JsonProperty("X076")
-    private int inputVariable076;
+    private double inputVariable076;
 
     @NotNull
     @JsonProperty("X077")
-    private int inputVariable077;
+    private double inputVariable077;
 
     @NotNull
     @JsonProperty("X078")
-    private int inputVariable078;
+    private double inputVariable078;
 
     @NotNull
     @JsonProperty("X079")
-    private int inputVariable079;
+    private double inputVariable079;
 
     @NotNull
     @JsonProperty("X080")
-    private int inputVariable080;
+    private double inputVariable080;
 
     @NotNull
     @JsonProperty("X081")
-    private int inputVariable081;
+    private double inputVariable081;
 
     @NotNull
     @JsonProperty("X082")
-    private int inputVariable082;
+    private double inputVariable082;
 
     @NotNull
     @JsonProperty("X083")
-    private int inputVariable083;
+    private double inputVariable083;
 
     @NotNull
     @JsonProperty("X084")
-    private int inputVariable084;
+    private double inputVariable084;
 
     @NotNull
     @JsonProperty("X085")
-    private int inputVariable085;
+    private double inputVariable085;
 
     @NotNull
     @JsonProperty("X086")
-    private int inputVariable086;
+    private double inputVariable086;
 
     @NotNull
     @JsonProperty("X087")
-    private int inputVariable087;
+    private double inputVariable087;
 
     @NotNull
     @JsonProperty("X088")
-    private int inputVariable088;
+    private double inputVariable088;
 
     @NotNull
     @JsonProperty("X089")
-    private int inputVariable089;
+    private double inputVariable089;
 
     @NotNull
     @JsonProperty("X090")
-    private int inputVariable090;
+    private double inputVariable090;
 
     @NotNull
     @JsonProperty("X091")
-    private int inputVariable091;
+    private double inputVariable091;
 
     @NotNull
     @JsonProperty("X092")
-    private int inputVariable092;
+    private double inputVariable092;
 
     @NotNull
     @JsonProperty("X093")
-    private int inputVariable093;
+    private double inputVariable093;
 
     @NotNull
     @JsonProperty("X094")
-    private int inputVariable094;
+    private double inputVariable094;
 
     @NotNull
     @JsonProperty("X095")
-    private int inputVariable095;
+    private double inputVariable095;
 
     @NotNull
     @JsonProperty("X096")
-    private int inputVariable096;
+    private double inputVariable096;
 
     @NotNull
     @JsonProperty("X097")
-    private int inputVariable097;
+    private double inputVariable097;
 
     @NotNull
     @JsonProperty("X098")
-    private int inputVariable098;
+    private double inputVariable098;
 
     @NotNull
     @JsonProperty("X099")
-    private int inputVariable099;
+    private double inputVariable099;
 
     @NotNull
     @JsonProperty("X100")
-    private int inputVariable100;
+    private double inputVariable100;
 
     @NotNull
     @JsonProperty("X101")
-    private int inputVariable101;
+    private double inputVariable101;
 
     @NotNull
     @JsonProperty("X102")
-    private int inputVariable102;
+    private double inputVariable102;
 
     @NotNull
     @JsonProperty("X103")
-    private int inputVariable103;
+    private double inputVariable103;
 
     @NotNull
     @JsonProperty("X104")
-    private int inputVariable104;
+    private double inputVariable104;
 
     @NotNull
     @JsonProperty("X105")
-    private int inputVariable105;
+    private double inputVariable105;
 
     @NotNull
     @JsonProperty("X106")
-    private int inputVariable106;
+    private double inputVariable106;
 
     @NotNull
     @JsonProperty("X107")
-    private int inputVariable107;
+    private double inputVariable107;
 
     @NotNull
     @JsonProperty("X108")
-    private int inputVariable108;
+    private double inputVariable108;
 
     @NotNull
     @JsonProperty("X109")
-    private int inputVariable109;
+    private double inputVariable109;
 
     @NotNull
     @JsonProperty("X110")
-    private int inputVariable110;
+    private double inputVariable110;
 
     @NotNull
     @JsonProperty("X111")
-    private int inputVariable111;
+    private double inputVariable111;
 
     @NotNull
     @JsonProperty("X112")
-    private int inputVariable112;
+    private double inputVariable112;
 
     @NotNull
     @JsonProperty("X113")
-    private int inputVariable113;
+    private double inputVariable113;
 
     @NotNull
     @JsonProperty("X114")
-    private int inputVariable114;
+    private double inputVariable114;
 
     @NotNull
     @JsonProperty("X115")
-    private int inputVariable115;
+    private double inputVariable115;
 
     @NotNull
     @JsonProperty("X116")
@@ -490,7 +490,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X120")
-    private int inputVariable120;
+    private double inputVariable120;
 
     @NotNull
     @JsonProperty("X121")
@@ -514,15 +514,15 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X126")
-    private int inputVariable126;
+    private double inputVariable126;
 
     @NotNull
     @JsonProperty("X127")
-    private int inputVariable127;
+    private double inputVariable127;
 
     @NotNull
     @JsonProperty("X128")
-    private int inputVariable128;
+    private double inputVariable128;
 
     @NotNull
     @JsonProperty("X129")
@@ -538,7 +538,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X132")
-    private int inputVariable132;
+    private double inputVariable132;
 
     @NotNull
     @JsonProperty("X133")
@@ -554,7 +554,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X136")
-    private int inputVariable136;
+    private double inputVariable136;
 
     @NotNull
     @JsonProperty("X137")
@@ -570,11 +570,11 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X140")
-    private int inputVariable140;
+    private double inputVariable140;
 
     @NotNull
     @JsonProperty("X141")
-    private int inputVariable141;
+    private double inputVariable141;
 
     @NotNull
     @JsonProperty("X142")
@@ -582,7 +582,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X143")
-    private int inputVariable143;
+    private double inputVariable143;
 
     @NotNull
     @JsonProperty("X144")
@@ -590,7 +590,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X145")
-    private int inputVariable145;
+    private double inputVariable145;
 
     @NotNull
     @JsonProperty("X146")
@@ -598,7 +598,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X147")
-    private int inputVariable147;
+    private double inputVariable147;
 
     @NotNull
     @JsonProperty("X148")
@@ -606,7 +606,7 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X149")
-    private int inputVariable149;
+    private double inputVariable149;
 
     @NotNull
     @JsonProperty("X150")
@@ -618,33 +618,225 @@ public class Model6DataFrame extends ModelDataFrame {
 
     @NotNull
     @JsonProperty("X152")
-    private int inputVariable152;
+    private double inputVariable152;
 
     @NotNull
     @JsonProperty("X153")
-    private int inputVariable153;
+    private double inputVariable153;
 
     @NotNull
     @JsonProperty("X154")
-    private int inputVariable154;
+    private double inputVariable154;
 
     @NotNull
     @JsonProperty("X155")
-    private int inputVariable155;
+    private double inputVariable155;
 
     @NotNull
     @JsonProperty("X156")
-    private int inputVariable156;
+    private double inputVariable156;
 
     @NotNull
     @JsonProperty("X157")
-    private int inputVariable157;
+    private double inputVariable157;
 
     @NotNull
     @JsonProperty("X158")
-    private int inputVariable158;
+    private double inputVariable158;
 
     @NotNull
     @JsonProperty("X159")
-    private int inputVariable159;
+    private double inputVariable159;
+
+    @NotNull
+    @JsonProperty("X160")
+    private int inputVariable160;
+
+    @NotNull
+    @JsonProperty("X161")
+    private String inputVariable161;
+
+    @NotNull
+    @JsonProperty("X162")
+    private int inputVariable162;
+
+    @NotNull
+    @JsonProperty("X163")
+    private int inputVariable163;
+
+    @NotNull
+    @JsonProperty("X164")
+    private double inputVariable164;
+
+    @NotNull
+    @JsonProperty("X165")
+    private String inputVariable165;
+
+    @NotNull
+    @JsonProperty("X166")
+    private int inputVariable166;
+
+    @NotNull
+    @JsonProperty("X167")
+    private int inputVariable167;
+
+    @NotNull
+    @JsonProperty("X168")
+    private int inputVariable168;
+
+    @NotNull
+    @JsonProperty("X169")
+    private int inputVariable169;
+
+    @NotNull
+    @JsonProperty("X170")
+    private int inputVariable170;
+
+    @NotNull
+    @JsonProperty("X171")
+    private int inputVariable171;
+
+    @NotNull
+    @JsonProperty("X172")
+    private int inputVariable172;
+
+    @NotNull
+    @JsonProperty("X173")
+    private int inputVariable173;
+
+    @NotNull
+    @JsonProperty("X174")
+    private double inputVariable174;
+
+    @NotNull
+    @JsonProperty("X175")
+    private int inputVariable175;
+
+    @NotNull
+    @JsonProperty("X176")
+    private int inputVariable176;
+
+    @NotNull
+    @JsonProperty("X177")
+    private int inputVariable177;
+
+    @NotNull
+    @JsonProperty("X178")
+    private int inputVariable178;
+
+    @NotNull
+    @JsonProperty("X179")
+    private int inputVariable179;
+
+    @NotNull
+    @JsonProperty("X180")
+    private int inputVariable180;
+
+    @NotNull
+    @JsonProperty("X181")
+    private int inputVariable181;
+
+    @NotNull
+    @JsonProperty("X182")
+    private int inputVariable182;
+
+    @NotNull
+    @JsonProperty("X183")
+    private int inputVariable183;
+
+    @NotNull
+    @JsonProperty("X184")
+    private int inputVariable184;
+
+    @NotNull
+    @JsonProperty("X185")
+    private int inputVariable185;
+
+    @NotNull
+    @JsonProperty("X186")
+    private int inputVariable186;
+
+    @NotNull
+    @JsonProperty("X187")
+    private int inputVariable187;
+
+    @NotNull
+    @JsonProperty("X188")
+    private int inputVariable188;
+
+    @NotNull
+    @JsonProperty("X189")
+    private int inputVariable189;
+
+    @NotNull
+    @JsonProperty("X190")
+    private int inputVariable190;
+
+    @NotNull
+    @JsonProperty("X191")
+    private int inputVariable191;
+
+    @NotNull
+    @JsonProperty("X192")
+    private double inputVariable192;
+
+    @NotNull
+    @JsonProperty("X193")
+    private double inputVariable193;
+
+    @NotNull
+    @JsonProperty("X194")
+    private int inputVariable194;
+
+    @NotNull
+    @JsonProperty("X195")
+    private int inputVariable195;
+
+    @NotNull
+    @JsonProperty("X196")
+    private int inputVariable196;
+
+    @NotNull
+    @JsonProperty("X197")
+    private double inputVariable197;
+
+    @NotNull
+    @JsonProperty("X198")
+    private double inputVariable198;
+
+    @NotNull
+    @JsonProperty("X199")
+    private double inputVariable199;
+
+    @NotNull
+    @JsonProperty("X200")
+    private int inputVariable200;
+
+    @NotNull
+    @JsonProperty("X201")
+    private int inputVariable201;
+
+    @NotNull
+    @JsonProperty("X202")
+    private int inputVariable202;
+
+    @NotNull
+    @JsonProperty("X203")
+    private int inputVariable203;
+
+    @NotNull
+    @JsonProperty("X204")
+    private double inputVariable204;
+
+    @NotNull
+    @JsonProperty("X205")
+    private double inputVariable205;
+
+    @NotNull
+    @JsonProperty("X206")
+    private int inputVariable206;
+
+    @NotNull
+    @JsonProperty("X207")
+    private int inputVariable207;
 }
